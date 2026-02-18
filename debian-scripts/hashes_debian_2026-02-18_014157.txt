@@ -1,0 +1,8 @@
+Host: debian
+Fecha: Wed, 18 Feb 2026 01:41:59 -0500
+
+e057800915b6f0081fd91137839939c389aa67a1b19dab329a68f9e4fbda06a9  /etc/ssh/sshd_config
+edbad153fff5956ba8fd39d2ed929e6904c481b52c2a8f5cbddf1477afff74a0  /etc/vsftpd.conf
+1858d9c6ac2ad3fedacbcfa646f4729268ec5be86b1839065dcf2cf4d8d187a8  /etc/apache2/apache2.conf
+d30e34c55db2c0652642fc235262fba55469e86af45f17acfc5b28448950f19b  /var/www/html/wp-config.php
+8d6195ef5660f2e24220a4aab76bec7a8d626a0b2a05e02d8294304f392c42a5  /etc/apache2/sites-enabled/000-default.conf

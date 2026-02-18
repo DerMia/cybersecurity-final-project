@@ -1,0 +1,492 @@
+Informe de recoleccion de evidencias (solo lectura)
+Host: debian.debian
+Fecha: Wed, 18 Feb 2026 01:41:57 -0500
+Usuario ejecutor: root
+Kernel: Linux debian 6.1.0-25-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.106-3 (2024-08-26) x86_64 GNU/Linux
+
+=======================================================================
+1) Contexto del sistema
+=======================================================================
+[date] Wed Feb 18 01:41:57 AM EST 2026
+
+[uptime]
+ 01:41:57 up 12:28,  2 users,  load average: 0.15, 0.18, 0.14
+
+[hostnamectl]
+ Static hostname: debian
+       Icon name: computer-vm
+         Chassis: vm 🖴
+      Machine ID: 41b6de202c3f48fdaa490411748aaaff
+         Boot ID: a63cdf9fae5a49239ef679482be48de8
+  Virtualization: oracle
+Operating System: Debian GNU/Linux 12 (bookworm)
+          Kernel: Linux 6.1.0-25-amd64
+    Architecture: x86-64
+ Hardware Vendor: innotek GmbH
+  Hardware Model: VirtualBox
+Firmware Version: VirtualBox
+
+[ip a]
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host noprefixroute 
+       valid_lft forever preferred_lft forever
+2: enp0s3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 08:00:27:00:9b:31 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.50.10/24 brd 192.168.50.255 scope global enp0s3
+       valid_lft forever preferred_lft forever
+    inet6 fe80::a00:27ff:fe00:9b31/64 scope link 
+       valid_lft forever preferred_lft forever
+
+[ip r]
+169.254.0.0/16 dev enp0s3 scope link metric 1000 
+192.168.50.0/24 dev enp0s3 proto kernel scope link src 192.168.50.10 
+
+=======================================================================
+2) Usuarios, sesiones y privilegios
+=======================================================================
+[who]
+debian   tty7         2026-02-17 13:14 (:0)
+debian   pts/1        2026-02-18 01:41
+
+[last -n 30]
+debian   tty7         :0               Tue Feb 17 13:14   still logged in
+reboot   system boot  6.1.0-25-amd64   Tue Feb 17 13:13   still running
+debian   tty7         :0               Mon Feb 16 11:17 - crash (1+01:56)
+reboot   system boot  6.1.0-25-amd64   Mon Feb 16 11:16   still running
+debian   tty7         :0               Mon Feb 16 11:11 - crash  (00:05)
+reboot   system boot  6.1.0-25-amd64   Mon Feb 16 11:10   still running
+debian   tty7         :0               Mon Feb 16 10:32 - crash  (00:37)
+reboot   system boot  6.1.0-25-amd64   Mon Feb 16 10:32   still running
+debian   tty7         :0               Sat Feb 14 11:56 - crash (1+22:35)
+reboot   system boot  6.1.0-25-amd64   Sat Feb 14 11:56   still running
+debian   tty7         :0               Sat Feb 14 11:48 - crash  (00:07)
+reboot   system boot  6.1.0-25-amd64   Sat Feb 14 11:40   still running
+debian   tty7         :0               Fri Feb 13 10:54 - crash (1+00:46)
+reboot   system boot  6.1.0-25-amd64   Fri Feb 13 10:53   still running
+debian   tty7         :0               Fri Feb 13 05:18 - crash  (05:35)
+reboot   system boot  6.1.0-25-amd64   Fri Feb 13 04:46   still running
+debian   tty7         :0               Thu Feb 12 05:44 - crash  (23:02)
+reboot   system boot  6.1.0-25-amd64   Thu Feb 12 05:43   still running
+debian   tty7         :0               Tue Oct  8 17:28 - crash (491+13:14)
+reboot   system boot  6.1.0-25-amd64   Tue Oct  8 17:28   still running
+debian   tty7         :0               Tue Oct  8 16:48 - crash  (00:40)
+reboot   system boot  6.1.0-25-amd64   Tue Oct  8 16:48   still running
+debian   tty7         :0               Tue Oct  8 16:44 - crash  (00:03)
+reboot   system boot  6.1.0-25-amd64   Tue Oct  8 16:43   still running
+debian   tty7         :0               Mon Sep 30 15:13 - crash (8+01:29)
+reboot   system boot  6.1.0-25-amd64   Mon Sep 30 15:09   still running
+debian   tty7         :0               Mon Sep 30 09:49 - 12:27  (02:38)
+reboot   system boot  6.1.0-23-amd64   Mon Sep 30 09:48 - 12:28  (02:39)
+debian   tty7         :0               Sat Sep 28 16:40 - crash (1+17:08)
+reboot   system boot  6.1.0-23-amd64   Sat Sep 28 16:39 - 12:28 (1+19:48)
+
+wtmp begins Wed Jul 31 15:56:58 2024
+
+[Usuarios con UID >= 1000]
+nobody UID=65534 HOME=/nonexistent SHELL=/usr/sbin/nologin
+debian UID=1000 HOME=/home/debian SHELL=/bin/bash
+
+[Grupos del usuario debian (si existe)]
+uid=1000(debian) gid=1000(debian) groups=1000(debian),24(cdrom),25(floppy),29(audio),30(dip),44(video),46(plugdev),100(users),106(netdev),111(bluetooth),113(lpadmin),116(scanner)
+
+[Sudoers: NOPASSWD]
+No encontrado
+
+=======================================================================
+3) Servicios activos, puertos y procesos
+=======================================================================
+[ss -tulpn]
+Netid State  Recv-Q Send-Q Local Address:Port  Peer Address:PortProcess                                
+udp   UNCONN 0      0            0.0.0.0:5353       0.0.0.0:*    users:(("avahi-daemon",pid=385,fd=12))
+udp   UNCONN 0      0            0.0.0.0:54702      0.0.0.0:*    users:(("avahi-daemon",pid=385,fd=14))
+udp   UNCONN 0      0               [::]:5353          [::]:*    users:(("avahi-daemon",pid=385,fd=13))
+udp   UNCONN 0      0               [::]:55177         [::]:*    users:(("avahi-daemon",pid=385,fd=15))
+tcp   LISTEN 0      80         127.0.0.1:3306       0.0.0.0:*    users:(("mariadbd",pid=762,fd=31))    
+tcp   LISTEN 0      128        127.0.0.1:631        0.0.0.0:*    users:(("cupsd",pid=717,fd=7))        
+tcp   LISTEN 0      128          0.0.0.0:22         0.0.0.0:*    users:(("sshd",pid=633,fd=3))         
+tcp   LISTEN 0      128            [::1]:631           [::]:*    users:(("cupsd",pid=717,fd=6))        
+tcp   LISTEN 0      32                 *:21               *:*    users:(("vsftpd",pid=623,fd=3))       
+tcp   LISTEN 0      128             [::]:22            [::]:*    users:(("sshd",pid=633,fd=4))         
+tcp   LISTEN 0      511                *:80               *:*    users:(("apache2",pid=767,fd=4),("apache2",pid=766,fd=4),("apache2",pid=765,fd=4),("apache2",pid=764,fd=4),("apache2",pid=763,fd=4),("apache2",pid=728,fd=4))
+
+[systemctl --type=service (running)]
+  UNIT                      LOAD   ACTIVE SUB     DESCRIPTION
+  accounts-daemon.service   loaded active running Accounts Service
+  apache2.service           loaded active running The Apache HTTP Server
+  avahi-daemon.service      loaded active running Avahi mDNS/DNS-SD Stack
+  cron.service              loaded active running Regular background program processing daemon
+  cups-browsed.service      loaded active running Make remote CUPS printers available locally
+  cups.service              loaded active running CUPS Scheduler
+  dbus.service              loaded active running D-Bus System Message Bus
+  getty@tty1.service        loaded active running Getty on tty1
+  lightdm.service           loaded active running Light Display Manager
+  mariadb.service           loaded active running MariaDB 10.11.6 database server
+  ModemManager.service      loaded active running Modem Manager
+  NetworkManager.service    loaded active running Network Manager
+  polkit.service            loaded active running Authorization Manager
+  rtkit-daemon.service      loaded active running RealtimeKit Scheduling Policy Service
+  ssh.service               loaded active running OpenBSD Secure Shell server
+  systemd-hostnamed.service loaded active running Hostname Service
+  systemd-journald.service  loaded active running Journal Service
+  systemd-logind.service    loaded active running User Login Management
+  systemd-timesyncd.service loaded active running Network Time Synchronization
+  systemd-udevd.service     loaded active running Rule-based Manager for Device Events and Files
+  udisks2.service           loaded active running Disk Manager
+  upower.service            loaded active running Daemon for power management
+  user@1000.service         loaded active running User Manager for UID 1000
+  vsftpd.service            loaded active running vsftpd FTP server
+  wpa_supplicant.service    loaded active running WPA supplicant
+
+LOAD   = Reflects whether the unit definition was properly loaded.
+ACTIVE = The high-level unit activation state, i.e. generalization of SUB.
+SUB    = The low-level unit activation state, values depend on unit type.
+25 loaded units listed.
+
+[ps aux --sort=-%cpu | head -n 25]
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root       10836  100  0.2  11216  4872 pts/1    R+   01:41   0:00 ps aux --sort=-%cpu
+root         669 43.9  6.0 448192 121400 tty7    Ssl+ Feb17 328:39 /usr/lib/xorg/Xorg :0 -seat seat0 -auth /var/run/lightdm/root/:0 -nolisten tcp vt7 -novtswitch
+root       10822 26.3  0.3  16340  6736 ?        Ss   01:41   0:00 /lib/systemd/systemd-hostnamed
+root       10812  3.8  0.1   6932  3396 pts/1    S+   01:41   0:00 bash ./recolectar_evidencias.sh
+debian       995  2.4  1.6 1703280 33108 ?       Ssl  Feb17  18:01 /usr/bin/pulseaudio --daemonize=no --log-target=journal
+debian      1395  0.6  0.8 730636 16900 ?        Ssl  Feb17   4:58 /usr/bin/speech-dispatcher --spawn --communication-method unix_socket --socket-path /run/user/1000/speech-dispatcher/speechd.sock --port 6560
+debian      1163  0.2  3.5 389008 70700 ?        Sl   Feb17   2:11 /usr/bin/python3 /usr/bin/orca
+debian      1448  0.1  2.5 558536 50540 ?        Sl   Feb17   1:24 mate-terminal
+root       10412  0.1  0.0      0     0 ?        I    01:39   0:00 [kworker/1:1-events]
+root        3221  0.0  0.0      0     0 ?        I    Feb17   0:08 [kworker/1:2-events]
+debian      1095  0.0  2.4 735660 48376 ?        Sl   Feb17   0:32 marco
+debian      1065  0.0  0.2   9544  5060 ?        S    Feb17   0:26 /usr/bin/dbus-daemon --config-file=/usr/share/defaults/at-spi2/accessibility.conf --nofork --print-address 11 --address=unix:path=/run/user/1000/at-spi/bus_0
+root        9701  0.0  0.0      0     0 ?        I    01:34   0:00 [kworker/0:0-ata_sff]
+root       10492  0.0  0.0      0     0 ?        I    01:39   0:00 [kworker/0:2-events]
+root        9129  0.0  0.0      0     0 ?        I    01:29   0:00 [kworker/0:1-ata_sff]
+root       10261  0.0  0.0      0     0 ?        I    01:38   0:00 [kworker/u4:1-events_unbound]
+debian      1089  0.0  0.4 164520 10068 ?        Sl   Feb17   0:14 /usr/libexec/at-spi2-registryd --use-gnome-session
+debian      1352  0.0  0.6 108808 12312 ?        Sl   Feb17   0:13 /usr/lib/speech-dispatcher-modules/sd_espeak-ng /etc/speech-dispatcher/modules/espeak-ng.conf
+mysql        762  0.0 12.2 1349444 245908 ?      Ssl  Feb17   0:12 /usr/sbin/mariadbd
+root        7753  0.0  0.0      0     0 ?        I    01:19   0:00 [kworker/u4:2-flush-8:0]
+root        9544  0.0  0.0      0     0 ?        I    01:33   0:00 [kworker/u4:0-events_unbound]
+debian      1166  0.0  2.2 351764 44520 ?        Sl   Feb17   0:05 mate-screensaver
+root           1  0.0  0.6 167824 12424 ?        Ss   Feb17   0:05 /sbin/init splash
+debian      1392  0.0  0.3 363136  6096 ?        Sl   Feb17   0:03 /usr/lib/speech-dispatcher-modules/sd_dummy /etc/speech-dispatcher/modules/dummy.conf
+
+=======================================================================
+4) SSH: configuracion y evidencias
+=======================================================================
+[sshd_config (directivas clave)]
+38:PubkeyAuthentication yes
+57:PasswordAuthentication no
+85:UsePAM yes
+
+[journalctl -u ssh (ultimas 200 lineas)]
+Sep 30 12:25:16 debian systemd[1]: Starting ssh.service - OpenBSD Secure Shell server...
+Sep 30 12:25:16 debian sshd[51422]: Server listening on 0.0.0.0 port 22.
+Sep 30 12:25:16 debian sshd[51422]: Server listening on :: port 22.
+Sep 30 12:25:16 debian systemd[1]: Started ssh.service - OpenBSD Secure Shell server.
+Sep 30 12:27:50 debian systemd[1]: Stopping ssh.service - OpenBSD Secure Shell server...
+Sep 30 12:27:50 debian sshd[51422]: Received signal 15; terminating.
+Sep 30 12:27:50 debian systemd[1]: ssh.service: Deactivated successfully.
+Sep 30 12:27:50 debian systemd[1]: Stopped ssh.service - OpenBSD Secure Shell server.
+-- Boot 46ff5cf6df3d4f0e86b315592aaba2d0 --
+Sep 30 15:09:51 debian systemd[1]: Starting ssh.service - OpenBSD Secure Shell server...
+Sep 30 15:09:51 debian sshd[560]: Server listening on 0.0.0.0 port 22.
+Sep 30 15:09:51 debian systemd[1]: Started ssh.service - OpenBSD Secure Shell server.
+Sep 30 15:09:51 debian sshd[560]: Server listening on :: port 22.
+Oct 08 16:14:16 debian systemd[1]: Stopping ssh.service - OpenBSD Secure Shell server...
+Oct 08 16:14:16 debian sshd[560]: Received signal 15; terminating.
+Oct 08 16:14:16 debian systemd[1]: ssh.service: Deactivated successfully.
+Oct 08 16:14:16 debian systemd[1]: Stopped ssh.service - OpenBSD Secure Shell server.
+Oct 08 16:14:16 debian systemd[1]: Starting ssh.service - OpenBSD Secure Shell server...
+Oct 08 16:14:16 debian sshd[5341]: Server listening on 0.0.0.0 port 22.
+Oct 08 16:14:16 debian sshd[5341]: Server listening on :: port 22.
+Oct 08 16:14:16 debian systemd[1]: Started ssh.service - OpenBSD Secure Shell server.
+-- Boot 342683d8f35244b08c4f3863f2978eca --
+Oct 08 16:43:18 debian systemd[1]: Starting ssh.service - OpenBSD Secure Shell server...
+Oct 08 16:43:18 debian sshd[543]: Server listening on 0.0.0.0 port 22.
+Oct 08 16:43:18 debian sshd[543]: Server listening on :: port 22.
+Oct 08 16:43:18 debian systemd[1]: Started ssh.service - OpenBSD Secure Shell server.
+-- Boot d28e179bf5884b25bf94452c79fd0afa --
+Oct 08 16:48:02 debian systemd[1]: Starting ssh.service - OpenBSD Secure Shell server...
+Oct 08 16:48:02 debian sshd[555]: Server listening on 0.0.0.0 port 22.
+Oct 08 16:48:02 debian sshd[555]: Server listening on :: port 22.
+Oct 08 16:48:02 debian systemd[1]: Started ssh.service - OpenBSD Secure Shell server.
+-- Boot af0a79f76920440c8e08594d6547449b --
+Oct 08 17:28:37 debian systemd[1]: Starting ssh.service - OpenBSD Secure Shell server...
+Oct 08 17:28:38 debian sshd[550]: Server listening on 0.0.0.0 port 22.
+Oct 08 17:28:38 debian sshd[550]: Server listening on :: port 22.
+Oct 08 17:28:38 debian systemd[1]: Started ssh.service - OpenBSD Secure Shell server.
+Oct 08 17:40:59 debian sshd[1650]: Accepted password for root from 192.168.0.134 port 45623 ssh2
+Oct 08 17:40:59 debian sshd[1650]: pam_unix(sshd:session): session opened for user root(uid=0) by (uid=0)
+Oct 08 17:40:59 debian sshd[1650]: pam_env(sshd:session): deprecated reading of user environment enabled
+-- Boot b6e7e1ad7ce74db39401cecb56eb92ab --
+Feb 12 05:43:43 debian systemd[1]: Starting ssh.service - OpenBSD Secure Shell server...
+Feb 12 05:43:44 debian sshd[610]: Server listening on 0.0.0.0 port 22.
+Feb 12 05:43:44 debian sshd[610]: Server listening on :: port 22.
+Feb 12 05:43:44 debian systemd[1]: Started ssh.service - OpenBSD Secure Shell server.
+-- Boot d53bf340040c4678b565e00dd49f6e82 --
+Feb 13 04:46:22 debian systemd[1]: Starting ssh.service - OpenBSD Secure Shell server...
+Feb 13 04:46:23 debian sshd[598]: Server listening on 0.0.0.0 port 22.
+Feb 13 04:46:23 debian sshd[598]: Server listening on :: port 22.
+Feb 13 04:46:23 debian systemd[1]: Started ssh.service - OpenBSD Secure Shell server.
+Feb 13 08:37:54 debian systemd[1]: Stopping ssh.service - OpenBSD Secure Shell server...
+Feb 13 08:37:54 debian systemd[1]: ssh.service: Deactivated successfully.
+Feb 13 08:37:54 debian systemd[1]: Stopped ssh.service - OpenBSD Secure Shell server.
+Feb 13 08:37:54 debian systemd[1]: Starting ssh.service - OpenBSD Secure Shell server...
+Feb 13 08:37:54 debian sshd[3006]: Server listening on 0.0.0.0 port 22.
+Feb 13 08:37:54 debian sshd[3006]: Server listening on :: port 22.
+Feb 13 08:37:54 debian systemd[1]: Started ssh.service - OpenBSD Secure Shell server.
+-- Boot d9e8ef4a5c364bfb8653d341d263384f --
+Feb 13 10:53:58 debian systemd[1]: Starting ssh.service - OpenBSD Secure Shell server...
+Feb 13 10:53:58 debian sshd[584]: Server listening on 0.0.0.0 port 22.
+Feb 13 10:53:58 debian systemd[1]: Started ssh.service - OpenBSD Secure Shell server.
+Feb 13 10:53:58 debian sshd[584]: Server listening on :: port 22.
+Feb 13 12:20:39 debian sshd[2054]: error: kex_exchange_identification: Connection closed by remote host
+Feb 13 12:20:39 debian sshd[2054]: Connection closed by 192.168.50.20 port 58306
+Feb 13 12:21:38 debian sshd[2081]: error: kex_exchange_identification: Connection closed by remote host
+Feb 13 12:21:38 debian sshd[2081]: Connection closed by 192.168.50.20 port 40082
+Feb 13 12:37:51 debian sshd[2102]: error: kex_exchange_identification: Connection closed by remote host
+Feb 13 12:37:51 debian sshd[2102]: Connection closed by 192.168.50.20 port 41804
+-- Boot 7a8254cd6d3049f2bc15d73010df2ea2 --
+Feb 14 11:40:53 debian systemd[1]: Starting ssh.service - OpenBSD Secure Shell server...
+Feb 14 11:40:54 debian sshd[605]: Server listening on 0.0.0.0 port 22.
+Feb 14 11:40:54 debian sshd[605]: Server listening on :: port 22.
+Feb 14 11:40:54 debian systemd[1]: Started ssh.service - OpenBSD Secure Shell server.
+-- Boot 482a668092614a68be211400bd2e6161 --
+Feb 14 11:56:13 debian systemd[1]: Starting ssh.service - OpenBSD Secure Shell server...
+Feb 14 11:56:13 debian sshd[585]: Server listening on 0.0.0.0 port 22.
+Feb 14 11:56:13 debian sshd[585]: Server listening on :: port 22.
+Feb 14 11:56:13 debian systemd[1]: Started ssh.service - OpenBSD Secure Shell server.
+Feb 14 12:02:18 debian sshd[1849]: error: kex_exchange_identification: Connection closed by remote host
+Feb 14 12:02:18 debian sshd[1849]: Connection closed by 192.168.50.20 port 45718
+Feb 14 12:07:00 debian sshd[1998]: Connection closed by 192.168.50.20 port 58178 [preauth]
+Feb 14 12:07:35 debian sshd[2000]: Connection closed by 192.168.50.20 port 51348 [preauth]
+-- Boot 2de58f8277eb4ff186ff4cc60bdada62 --
+Feb 16 10:32:19 debian systemd[1]: Starting ssh.service - OpenBSD Secure Shell server...
+Feb 16 10:32:20 debian sshd[601]: Server listening on 0.0.0.0 port 22.
+Feb 16 10:32:20 debian sshd[601]: Server listening on :: port 22.
+Feb 16 10:32:20 debian systemd[1]: Started ssh.service - OpenBSD Secure Shell server.
+-- Boot f2e8383ea4754508b6979116939f9a68 --
+Feb 16 11:10:35 debian systemd[1]: Starting ssh.service - OpenBSD Secure Shell server...
+Feb 16 11:10:35 debian sshd[577]: Server listening on 0.0.0.0 port 22.
+Feb 16 11:10:35 debian sshd[577]: Server listening on :: port 22.
+Feb 16 11:10:35 debian systemd[1]: Started ssh.service - OpenBSD Secure Shell server.
+-- Boot f295778c097b4125a7422f04b2f9c855 --
+Feb 16 11:16:54 debian systemd[1]: Starting ssh.service - OpenBSD Secure Shell server...
+Feb 16 11:16:54 debian sshd[595]: Server listening on 0.0.0.0 port 22.
+Feb 16 11:16:54 debian sshd[595]: Server listening on :: port 22.
+Feb 16 11:16:54 debian systemd[1]: Started ssh.service - OpenBSD Secure Shell server.
+-- Boot a63cdf9fae5a49239ef679482be48de8 --
+Feb 17 13:13:56 debian systemd[1]: Starting ssh.service - OpenBSD Secure Shell server...
+Feb 17 13:13:57 debian sshd[633]: Server listening on 0.0.0.0 port 22.
+Feb 17 13:13:57 debian sshd[633]: Server listening on :: port 22.
+Feb 17 13:13:57 debian systemd[1]: Started ssh.service - OpenBSD Secure Shell server.
+
+[journalctl -u sshd (ultimas 200 lineas)]
+-- No entries --
+
+[/root/.ssh/authorized_keys]
+No existe /root/.ssh/authorized_keys
+
+=======================================================================
+5) FTP (vsftpd): configuracion y estado
+=======================================================================
+[systemctl status vsftpd]
+● vsftpd.service - vsftpd FTP server
+     Loaded: loaded (/lib/systemd/system/vsftpd.service; enabled; preset: enabled)
+     Active: active (running) since Tue 2026-02-17 13:13:57 EST; 12h ago
+    Process: 620 ExecStartPre=/bin/mkdir -p /var/run/vsftpd/empty (code=exited, status=0/SUCCESS)
+   Main PID: 623 (vsftpd)
+      Tasks: 1 (limit: 2284)
+     Memory: 1.0M
+        CPU: 31ms
+     CGroup: /system.slice/vsftpd.service
+             └─623 /usr/sbin/vsftpd /etc/vsftpd.conf
+
+Feb 17 13:13:56 debian systemd[1]: Starting vsftpd.service - vsftpd FTP server...
+Feb 17 13:13:57 debian systemd[1]: Started vsftpd.service - vsftpd FTP server.
+
+[vsftpd.conf (directivas clave)]
+14:listen=NO
+22:listen_ipv6=YES
+25:anonymous_enable=NO
+28:local_enable=YES
+31:write_enable=YES
+151:ssl_enable=NO
+
+=======================================================================
+6) Apache/WordPress: evidencia rapida y configuracion
+=======================================================================
+[systemctl status apache2]
+● apache2.service - The Apache HTTP Server
+     Loaded: loaded (/lib/systemd/system/apache2.service; enabled; preset: enabled)
+     Active: active (running) since Tue 2026-02-17 13:13:57 EST; 12h ago
+       Docs: https://httpd.apache.org/docs/2.4/
+    Process: 611 ExecStart=/usr/sbin/apachectl start (code=exited, status=0/SUCCESS)
+   Main PID: 728 (apache2)
+      Tasks: 6 (limit: 2284)
+     Memory: 23.7M
+        CPU: 2.572s
+     CGroup: /system.slice/apache2.service
+             ├─728 /usr/sbin/apache2 -k start
+             ├─763 /usr/sbin/apache2 -k start
+             ├─764 /usr/sbin/apache2 -k start
+             ├─765 /usr/sbin/apache2 -k start
+             ├─766 /usr/sbin/apache2 -k start
+             └─767 /usr/sbin/apache2 -k start
+
+Feb 17 13:13:56 debian systemd[1]: Starting apache2.service - The Apache HTTP Server...
+Feb 17 13:13:57 debian systemd[1]: Started apache2.service - The Apache HTTP Server.
+
+[apache2ctl -S]
+VirtualHost configuration:
+*:80                   debian.debian (/etc/apache2/sites-enabled/000-default.conf:1)
+ServerRoot: "/etc/apache2"
+Main DocumentRoot: "/var/www/html"
+Main ErrorLog: "/var/log/apache2/error.log"
+Mutex rewrite-map: using_defaults
+Mutex default: dir="/var/run/apache2/" mechanism=default 
+Mutex mpm-accept: using_defaults
+Mutex watchdog-callback: using_defaults
+PidFile: "/var/run/apache2/apache2.pid"
+Define: DUMP_VHOSTS
+Define: DUMP_RUN_CFG
+User: name="www-data" id=33
+Group: name="www-data" id=33
+
+[Ruta web /var/www/html]
+total 256
+drwxr-xr-x  5 www-data www-data  4096 Feb 13 12:20 .
+drwxr-xr-x  3 root     root      4096 Sep 30  2024 ..
+-rw-r--r--  1 www-data www-data   523 Sep 30  2024 .htaccess
+-rw-r--r--  1 www-data www-data 10701 Sep 30  2024 index.html
+-rw-r--r--  1 www-data www-data   405 Feb  6  2020 index.php
+-rw-r--r--  1 www-data www-data 19915 Dec 31  2023 license.txt
+-rw-r--r--  1 www-data www-data  7409 Jun 18  2024 readme.html
+-rw-r--r--  1 www-data www-data  7387 Feb 13  2024 wp-activate.php
+drwxr-xr-x  9 www-data www-data  4096 Sep 10  2024 wp-admin
+-rw-r--r--  1 www-data www-data   351 Feb  6  2020 wp-blog-header.php
+-rw-r--r--  1 www-data www-data  2323 Jun 14  2023 wp-comments-post.php
+-rw-------  1 www-data www-data  3017 Sep 30  2024 wp-config.php
+drwxr-xr-x  5 www-data www-data  4096 Feb 13 12:20 wp-content
+-rw-r--r--  1 www-data www-data  5638 May 30  2023 wp-cron.php
+drwxr-xr-x 30 www-data www-data 12288 Sep 10  2024 wp-includes
+-rw-r--r--  1 www-data www-data  2502 Nov 26  2022 wp-links-opml.php
+-rw-r--r--  1 www-data www-data  3937 Mar 11  2024 wp-load.php
+-rw-r--r--  1 www-data www-data 51238 May 28  2024 wp-login.php
+-rw-r--r--  1 www-data www-data  8525 Sep 16  2023 wp-mail.php
+-rw-r--r--  1 www-data www-data 28774 Jul  9  2024 wp-settings.php
+-rw-r--r--  1 www-data www-data 34385 Jun 19  2023 wp-signup.php
+-rw-r--r--  1 www-data www-data  4885 Jun 22  2023 wp-trackback.php
+-rw-r--r--  1 www-data www-data  3246 Mar  2  2024 xmlrpc.php
+
+[wp-config.php permisos]
+Cantidad: 0
+
+=======================================================================
+7) Cron y persistencia
+=======================================================================
+[/etc/cron.d]
+total 24
+drwxr-xr-x   2 root root 4096 Sep 30  2024 .
+drwxr-xr-x 120 root root 4096 Feb 13 08:42 ..
+-rw-r--r--   1 root root  285 Jan 10  2023 anacron
+-rw-r--r--   1 root root  201 Mar  4  2023 e2scrub_all
+-rw-r--r--   1 root root  712 Jul 13  2022 php
+-rw-r--r--   1 root root  102 Mar  2  2023 .placeholder
+
+[/etc/crontab]
+# /etc/crontab: system-wide crontab
+# Unlike any other crontab you don't have to run the `crontab'
+# command to install the new version when you edit this file
+# and files in /etc/cron.d. These files also have username fields,
+# that none of the other crontabs do.
+
+SHELL=/bin/sh
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+
+# Example of job definition:
+# .---------------- minute (0 - 59)
+# |  .------------- hour (0 - 23)
+# |  |  .---------- day of month (1 - 31)
+# |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...
+# |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat
+# |  |  |  |  |
+# *  *  *  *  * user-name command to be executed
+17 *	* * *	root	cd / && run-parts --report /etc/cron.hourly
+25 6	* * *	root	test -x /usr/sbin/anacron || { cd / && run-parts --report /etc/cron.daily; }
+47 6	* * 7	root	test -x /usr/sbin/anacron || { cd / && run-parts --report /etc/cron.weekly; }
+52 6	1 * *	root	test -x /usr/sbin/anacron || { cd / && run-parts --report /etc/cron.monthly; }
+#
+
+[systemd timers]
+NEXT                        LEFT          LAST                        PASSED        UNIT                         ACTIVATES
+Wed 2026-02-18 02:09:00 EST 27min left    Wed 2026-02-18 01:39:01 EST 2min 58s ago  phpsessionclean.timer        phpsessionclean.service
+Wed 2026-02-18 05:07:26 EST 3h 25min left Tue 2026-02-17 23:03:42 EST 2h 38min ago  man-db.timer                 man-db.service
+Wed 2026-02-18 06:41:18 EST 4h 59min left Tue 2026-02-17 13:36:05 EST 12h ago       apt-daily-upgrade.timer      apt-daily-upgrade.service
+Wed 2026-02-18 07:32:36 EST 5h 50min left Tue 2026-02-17 23:33:27 EST 2h 8min ago   anacron.timer                anacron.service
+Wed 2026-02-18 08:41:40 EST 6h left       Tue 2026-02-17 23:03:42 EST 2h 38min ago  apt-daily.timer              apt-daily.service
+Wed 2026-02-18 13:29:01 EST 11h left      Tue 2026-02-17 13:29:01 EST 12h ago       systemd-tmpfiles-clean.timer systemd-tmpfiles-clean.service
+Thu 2026-02-19 00:00:00 EST 22h left      Wed 2026-02-18 00:00:11 EST 1h 41min ago  dpkg-db-backup.timer         dpkg-db-backup.service
+Thu 2026-02-19 00:00:00 EST 22h left      Wed 2026-02-18 00:00:11 EST 1h 41min ago  logrotate.timer              logrotate.service
+Sun 2026-02-22 03:10:52 EST 4 days left   Mon 2026-02-16 10:32:41 EST 1 day 15h ago e2scrub_all.timer            e2scrub_all.service
+Mon 2026-02-23 01:12:34 EST 4 days left   Mon 2026-02-16 12:02:49 EST 1 day 13h ago fstrim.timer                 fstrim.service
+
+10 timers listed.
+
+=======================================================================
+8) Historial root (si existe)
+=======================================================================
+[/root/.bash_history]
+-rw------- 1 root root 127 Jul 31  2024 /root/.bash_history
+--- tail -n 200 ---
+sudo visudo
+sudo systemctl stop speech-dispatcher
+sudo systemctl disable speech-dispatcher
+systemctl list-units --type=service
+
+[/root/.mysql_history]
+-rw------- 1 root root 1480 Feb 13 14:30 /root/.mysql_history
+--- tail -n 200 ---
+_HiStOrY_V2_
+CREATE\040DATABASE\040wordpress\040DEFAULT\040CHARACTER\040SET\040utf8\040COLLATE\040utf8_unicode_ci;
+CREATE\040USER\040'wordpressuser'@'localhost'\040IDENTIFIED\040BY\040'123456';
+GRANT\040ALL\040PRIVILEGES\040ON\040wordpress.*\040TO\040'wordpress'@'localhost';\040
+GRANT\040ALL\040PRIVILEGES\040ON\040wordpress.*\040TO\040'wordpressuser'@'localhost';
+FLUSH\040PRIVILIGES;
+FLUSH\040PRIVILEGES;
+EXIT;
+CREATE\040USER\040'user'@'localhost'\040IDENTIFIED\040BY\040'password';
+GRANT\040ALL\040PRIVILEGES\040ON\040*.*\040TO\040'user'@'localhost'\040WITH\040GRANT\040OPTION;
+FLUSH\040PRIVILEGES;
+EXIT;
+USE\040wordpress;
+SELECT\040option_name,\040option_value\040FROM\040wp_options\040WHERE\040option_name\040IN\040('siteurl','home');
+UPDATE\040wp_options\040SET\040option_value='http://192.168.50.10'\040WHERE\040option_name='home';
+UPDATE\040wp_options\040SET\040option_value='http://192.168.50.10'\040WHERE\040option_name='siteurl';
+SELECT\040option_name,\040option_value\040FROM\040wp_options\040WHERE\040option_name\040IN\040('siteurl','home');
+SELECT\040ID,\040user_login,\040user_email\040FROM\040wp_users;
+UPDATE\040wp_users;
+UPDATE\040wp_users
+SET\040user_pass\040=\040MD5('W0rdPr3ss!2026_Seguro')
+WHERE\040user_login\040=\040'wordpress-user';
+UPDATE\040wp_users\040SET\040user_pass\040=\040MD5('W0rdPr3ss!2026_Seguro')\040WHERE\040user_login\040=\040'wordpress-user';
+SELECT\040user_login,\040user_pass\040FROM\040wp_users\040WHERE\040user_login='wordpress-user';
+
+=======================================================================
+9) Hashes de integridad (archivos clave)
+=======================================================================
+Se generan hashes SHA256 en: hashes_debian_2026-02-18_014157.txt
+Archivos objetivo:
+- /etc/ssh/sshd_config
+- /etc/vsftpd.conf
+- /etc/apache2/apache2.conf
+- /etc/apache2/sites-enabled/*
+- /var/www/html/wp-config.php
+
+=======================================================================
+FIN
+=======================================================================
+Informe generado: evidencia_debian_2026-02-18_014157.txt
+Hashes generados:hashes_debian_2026-02-18_014157.txt
